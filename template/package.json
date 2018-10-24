@@ -14,13 +14,18 @@
     "lint": "eslint --ext .js,.vue src{{#unit}} test/unit/specs{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}}"{{/lint}}
   },
   "dependencies": {
-    "mpvue": "^1.0.11"{{#vuex}},
+    "flyio": "^0.6.1",
+    "lodash": "^4.17.11",
+    "mpvue": "^1.0.11",
+    "url-search-params": "^1.0.2"{{#vuex}},
     "vuex": "^3.0.1"{{/vuex}}
   },
   "devDependencies": {
+    "mpvue-entry": "^1.5.2",
     "mpvue-loader": "^1.1.2",
     "mpvue-webpack-target": "^1.0.0",
     "mpvue-template-compiler": "^1.0.11",
+    "node-sass": "^4.9.3",
     "portfinder": "^1.0.13",
     "postcss-mpvue-wxss": "^1.0.0",
     "prettier": "~1.12.1",
@@ -29,6 +34,7 @@
     "glob": "^7.1.2",
     "webpack-mpvue-asset-plugin": "^0.1.1",
     "relative": "^3.0.2",
+    "sass-loader": "^7.1.0",
     {{#lint}}
     "babel-eslint": "^8.2.3",
     {{/lint}}
