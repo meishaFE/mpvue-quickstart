@@ -63,17 +63,17 @@ module.exports = {
           "name": "Standard (https://github.com/feross/standard)",
           "value": "standard",
           "short": "Standard"
-        },
-        {
-          "name": "Airbnb (https://github.com/airbnb/javascript)",
-          "value": "airbnb",
-          "short": "Airbnb"
-        },
-        {
-          "name": "none (configure it yourself)",
-          "value": "none",
-          "short": "none"
         }
+        // {
+        //   "name": "Airbnb (https://github.com/airbnb/javascript)",
+        //   "value": "airbnb",
+        //   "short": "Airbnb"
+        // },
+        // {
+        //   "name": "none (configure it yourself)",
+        //   "value": "none",
+        //   "short": "none"
+        // }
       ]
     },
     "test": {
