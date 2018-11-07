@@ -34,3 +34,7 @@ export function formatTime (date, type = 0) {
       return `${t1} ${t2}`;
   }
 };
+
+export const getCdnUrl = (path) => {
+  return `https://cdn.meishakeji.com/${path}`;
+};
