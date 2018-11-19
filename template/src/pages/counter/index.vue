@@ -6,26 +6,23 @@
       <button @click="decrement">-</button>
     </p>
 
-    <a href="/pages/index/main" class="home">去往首页</a>
+    <a href="/pages/index/index" class="home">去往首页</a>
   </div>
 </template>
 
 <script>
-// Use Vuex
-import store from './store';
-
 export default {
   computed: {
     count () {
-      return store.state.count;
+      return this.$store.state.count;
     }
   },
   methods: {
     increment () {
-      store.commit('increment');
+      this.$store.commit('increment');
     },
     decrement () {
-      store.commit('decrement');
+      this.$store.commit('decrement');
     }
   }
 };
