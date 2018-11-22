@@ -2,11 +2,25 @@
 // The Vue build version to load with the `import` command
 // mpvue has been set in webpack.base.conf with an alias.
 {{/if_eq}}
-import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import Vue from 'vue';
+import App from '@/App';
+import store from '@/store';
+import _ from 'lodash';
+import * as $utils from '@/utils/index';
+import { fly as $http } from '@/utils/fetch';
+import { ENV, API } from '@/config/api';
 
-Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-App.mpType = 'app'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.prototype._ = _;
+Vue.prototype.$utils = $utils;
+Vue.prototype.$http = $http;
+Vue.prototype.$ENV = ENV;
+Vue.prototype.$API = API;
 
-const app = new Vue(App){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-app.$mount(){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.config.productionTip = false;
+App.mpType = 'app';
+
+const app = new Vue({
+  store,
+  ...App
+});
+app.$mount();

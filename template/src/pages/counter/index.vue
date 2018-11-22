@@ -6,29 +6,26 @@
       <button @click="decrement">-</button>
     </p>
 
-    <a href="/pages/index/main" class="home">去往首页</a>
+    <a href="/pages/index/index" class="home">去往首页</a>
   </div>
 </template>
 
 <script>
-// Use Vuex
-import store from './store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-
 export default {
   computed: {
-    count{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
-      return store.state.count{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-    }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+    count () {
+      return this.$store.state.count;
+    }
   },
   methods: {
-    increment{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
-      store.commit('increment'){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    increment () {
+      this.$store.commit('increment');
     },
-    decrement{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
-      store.commit('decrement'){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-    }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    decrement () {
+      this.$store.commit('decrement');
+    }
+  }
+};
 </script>
 
 <style>
